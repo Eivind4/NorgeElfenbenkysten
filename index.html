@@ -42,6 +42,19 @@ body{background:#001a54;font-family:'Nunito',sans-serif;}
 @keyframes float2{0%,100%{transform:translateY(-4px)}50%{transform:translateY(4px)}}
 .ball-spin{display:inline-block;animation:spin 3s linear infinite;}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+  .nav-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:480px;margin:0 auto;}
+  .nav-a{display:block;background:rgba(255,255,255,0.10);border:1.5px solid rgba(255,215,0,0.5);color:#FFD700;font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1px;padding:11px 10px;border-radius:12px;text-decoration:none;text-align:center;}
+  .nav-a:hover{background:rgba(255,255,255,0.18);}
+
+  .match-countdown{background:rgba(255,255,255,0.10);border:1.5px solid rgba(255,215,0,0.5);border-radius:12px;padding:12px 16px;text-align:center;max-width:480px;margin:0 auto;}
+  .cd-lbl{font-size:11px;font-weight:900;color:rgba(255,255,255,0.7);letter-spacing:2px;margin-bottom:6px;}
+  .cd-blocks{display:flex;justify-content:center;gap:10px;}
+  .cd-block{display:flex;flex-direction:column;align-items:center;gap:2px;}
+  .cd-num{font-family:'Anton',sans-serif;font-size:28px;color:#FFD700;line-height:1;min-width:44px;text-align:center;}
+  .cd-unit{font-size:10px;font-weight:700;color:rgba(255,255,255,0.55);letter-spacing:1px;}
+  .cd-sep{font-family:'Anton',sans-serif;font-size:26px;color:rgba(255,215,0,0.5);padding-top:2px;}
+  .cd-started{font-family:'Anton',sans-serif;font-size:20px;color:#FFD700;letter-spacing:1px;}
 </style>
 </head>
 <body>
@@ -54,6 +67,21 @@ body{background:#001a54;font-family:'Nunito',sans-serif;}
     </div>
     <div class="title-main">NORGE MOT<br>ELFENBENSKYSTEN</div>
     <div class="title-sub">VM-KAMP</div>
+  </div>
+
+
+  <div class="match-countdown" style="position:relative;z-index:2;">
+    <div class="cd-lbl">⚽ KAMPEN STARTER OM</div>
+    <div class="cd-blocks" id="cdBlocks">
+      <div class="cd-block"><span class="cd-num" id="cd-d">--</span><span class="cd-unit">DAGER</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="cd-h">--</span><span class="cd-unit">TIMER</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="cd-m">--</span><span class="cd-unit">MIN</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="cd-s">--</span><span class="cd-unit">SEK</span></div>
+    </div>
+    <div class="cd-started" id="cd-started" style="display:none;">🟢 KAMPEN ER I GANG!</div>
   </div>
 
   <div class="players-row">
@@ -132,7 +160,7 @@ body{background:#001a54;font-family:'Nunito',sans-serif;}
       <div class="prog-time">17:00</div>
       <div class="prog-icon">🎉</div>
       <div class="prog-text">Dørene åpner – Lek &amp; DJ
-        <div class="prog-sub">DJuRo, hopping og straffespark</div>
+        <div class="prog-sub">DJ uRo, hopping og straffespark</div>
       </div>
     </div>
 
@@ -199,5 +227,40 @@ body{background:#001a54;font-family:'Nunito',sans-serif;}
     VM 2026 · Familie- og vennekveld · Alle aldre velkomne
   </div>
 </div>
+
+  <div class="nav-grid" style="margin-top:4px;padding-bottom:14px;">
+    <a class="nav-a" href="info.html">ℹ️ PRAKTISK INFO</a>
+    <a class="nav-a" href="map.html">🗺 FESTIVALKART</a>
+    <a class="nav-a" href="quiz.html">⚽ VM-TIPPING</a>
+    <a class="nav-a" href="info.html#regForm">👨‍👩‍👧 REGISTRER BARN</a>
+  </div>
+<script>
+(function() {
+  var MATCH = new Date('2026-06-30T19:00:00');
+  function tick() {
+    var diff = MATCH - new Date();
+    if (diff <= 0) {
+      var blocks = document.getElementById('cdBlocks');
+      var lbl = document.querySelector('.cd-lbl');
+      var started = document.getElementById('cd-started');
+      if (blocks) blocks.style.display = 'none';
+      if (lbl) lbl.style.display = 'none';
+      if (started) started.style.display = 'block';
+      return;
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    var pad = function(n){ return String(n).padStart(2,'0'); };
+    document.getElementById('cd-d').textContent = pad(d);
+    document.getElementById('cd-h').textContent = pad(h);
+    document.getElementById('cd-m').textContent = pad(m);
+    document.getElementById('cd-s').textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praktisk info – VM-kamp kveld</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;background:#f0f4f8;min-height:100vh;}
+.wrap{max-width:480px;margin:0 auto;padding:14px;display:flex;flex-direction:column;gap:12px;}
+
+.hdr{text-align:center;padding:14px 0 4px;}
+.hdr-flags{font-size:26px;margin-bottom:4px;}
+.hdr-title{font-family:'Anton',sans-serif;font-size:28px;color:#003087;letter-spacing:2px;}
+.hdr-sub{font-size:13px;color:#666;margin-top:3px;}
+
+.card{background:white;border:1px solid #e0e0e0;border-radius:14px;padding:16px;}
+.card-title{font-family:'Anton',sans-serif;font-size:15px;letter-spacing:1px;color:#111;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+
+/* INFO ITEMS */
+.info-item{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid #f0f0f0;align-items:flex-start;}
+.info-item:last-child{border-bottom:none;padding-bottom:0;}
+.info-icon{font-size:26px;flex-shrink:0;width:34px;text-align:center;margin-top:1px;}
+.info-text{flex:1;}
+.info-head{font-weight:900;font-size:14px;color:#111;margin-bottom:3px;}
+.info-body{font-size:13px;color:#444;line-height:1.55;}
+.info-tag{display:inline-block;background:#fff3e0;color:#e65100;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;margin-top:5px;}
+.info-tag-red{background:#fce4ec;color:#c62828;}
+.info-tag-blue{background:#e3f2fd;color:#1565c0;}
+.info-tag-green{background:#e8f5e9;color:#2e7d32;}
+
+/* NOTICE BOX */
+.notice{background:#fff8e1;border:1.5px solid #FFD700;border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;}
+.notice-text{font-size:13px;color:#555;line-height:1.55;font-weight:700;}
+
+/* PROGRAM MINI */
+.prog-mini{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #f0f0f0;align-items:center;}
+.prog-mini:last-child{border-bottom:none;}
+.prog-time{font-family:'Anton',sans-serif;font-size:13px;color:#003087;min-width:48px;}
+.prog-dot{width:8px;height:8px;border-radius:50%;background:#e0e0e0;flex-shrink:0;}
+.prog-dot.active{background:#EF3340;}
+.prog-label{font-size:13px;font-weight:700;color:#333;}
+.prog-sub{font-size:11px;color:#888;margin-top:1px;}
+
+/* REGISTRATION FORM */
+.reg-form{display:flex;flex-direction:column;gap:10px;}
+input[type=text]{width:100%;padding:11px 14px;font-size:16px;font-family:'Nunito',sans-serif;font-weight:700;border:2px solid #ddd;border-radius:10px;background:#f8f8f8;color:#111;}
+input[type=text]:focus{outline:none;border-color:#003087;}
+.num-row{display:flex;align-items:center;gap:10px;}
+.num-lbl{font-size:13px;font-weight:900;color:#333;flex:1;}
+.sc-btn{width:36px;height:36px;border-radius:50%;border:2px solid #ddd;background:#f8f8f8;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#333;font-weight:700;}
+.sc-btn:hover{background:#eee;}
+.sc-num{font-size:24px;font-weight:900;color:#111;min-width:28px;text-align:center;}
+.submit-btn{width:100%;padding:13px;font-family:'Anton',sans-serif;font-size:17px;letter-spacing:2px;background:#003087;color:#FFD700;border:none;border-radius:12px;cursor:pointer;margin-top:2px;}
+.submit-btn:hover{opacity:.9;}
+.success-reg{background:#e8f5e9;border:1.5px solid #a5d6a7;border-radius:12px;padding:16px;text-align:center;display:none;}
+.success-reg .big{font-family:'Anton',sans-serif;font-size:22px;color:#1b5e20;}
+.success-reg .sub{font-size:13px;color:#2e7d32;margin-top:5px;font-weight:700;}
+.new-btn{width:100%;padding:10px;font-family:'Anton',sans-serif;font-size:14px;letter-spacing:1.5px;background:white;color:#003087;border:2px solid #003087;border-radius:10px;cursor:pointer;margin-top:8px;}
+
+/* REGISTERED LIST */
+.reg-list-wrap{margin-top:12px;border-top:1px solid #f0f0f0;padding-top:12px;display:none;}
+.reg-list-title{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1px;color:#888;margin-bottom:8px;}
+.reg-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #f5f5f5;}
+.reg-row:last-child{border-bottom:none;}
+.reg-name{flex:1;font-weight:900;font-size:13px;color:#111;}
+.reg-count{font-family:'Anton',sans-serif;font-size:16px;color:#003087;}
+.reg-badge{font-size:11px;color:#888;}
+.total-row{background:#f0f4f8;border-radius:8px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;margin-top:8px;}
+.total-lbl{font-size:13px;font-weight:900;color:#333;}
+.total-num{font-family:'Anton',sans-serif;font-size:22px;color:#003087;}
+
+/* NAV */
+.nav-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.nav-a{display:block;background:white;border:2px solid #003087;color:#003087;font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1px;padding:11px 10px;border-radius:12px;text-decoration:none;text-align:center;}
+.nav-a:hover{background:#f0f4f8;}
+.nav-a.primary{background:#003087;color:#FFD700;border-color:#003087;}
+.nav-a.primary:hover{opacity:.9;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hdr">
+    <div class="hdr-flags">🇳🇴 ⚽ 🇨🇮</div>
+    <div class="hdr-title">PRAKTISK INFO</div>
+    <div class="hdr-sub">Norge mot Elfenbenskysten · Tirsdag 30.06.2026</div>
+  </div>
+
+  <!-- QUICK PROGRAM -->
+  <div class="card">
+    <div class="card-title">📅 Kveldsprogram</div>
+    <div class="prog-mini"><div class="prog-time">17:00</div><div class="prog-dot"></div><div><div class="prog-label">Dørene åpner</div><div class="prog-sub">Lek, DJuRo, hopping og straffespark</div></div></div>
+    <div class="prog-mini"><div class="prog-time">18:00</div><div class="prog-dot active"></div><div><div class="prog-label">Mat serveres</div><div class="prog-sub">Barnepakke inkludert · Grill åpen</div></div></div>
+    <div class="prog-mini"><div class="prog-time">18:30</div><div class="prog-dot"></div><div><div class="prog-label">Alt for Norge – liveopptreden</div><div class="prog-sub">Bogstad talenter, vinner 1. klasse</div></div></div>
+    <div class="prog-mini"><div class="prog-time">18:45</div><div class="prog-dot"></div><div><div class="prog-label">Rokonkurranse</div></div></div>
+    <div class="prog-mini"><div class="prog-time">19:00</div><div class="prog-dot active"></div><div><div class="prog-label" style="color:#EF3340;">🟢 Kampen starter!</div></div></div>
+  </div>
+
+  <!-- TA MED -->
+  <div class="card">
+    <div class="card-title">🎒 Husk å ta med</div>
+
+    <div class="info-item">
+      <div class="info-icon">🍔</div>
+      <div class="info-text">
+        <div class="info-head">Egen mat til deg selv</div>
+        <div class="info-body">Vi har kun mat til barna. Grillen har begrenset kapasitet, så vi anbefaler å ta med noe enkelt som <strong>pølser eller burgere</strong> — håndmat funker best!</div>
+        <span class="info-tag info-tag-red">Viktig!</span>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">🥤</div>
+      <div class="info-text">
+        <div class="info-head">Drikke + kjølebag</div>
+        <div class="info-body">Det er begrenset plass til medbrakt kjølig drikke. Ta gjerne med en <strong>kjølebag</strong> slik at drikkene holder seg kalde.</div>
+        <span class="info-tag info-tag-blue">Tips</span>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <div class="info-icon">🪑</div>
+      <div class="info-text">
+        <div class="info-head">Pute eller stol</div>
+        <div class="info-body">Tribunen er <strong>hardt treverk</strong> — ta gjerne med en pute for ekstra komfort, eller din egen campingstol om du vil sitte som en kongeørn.</div>
+        <span class="info-tag info-tag-green">Anbefalt</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BARNEPAKKE INFO -->
+  <div class="card">
+    <div class="card-title">🧒 Barnepakken (inkludert)</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <span style="background:#fff3e0;color:#e65100;font-size:13px;font-weight:700;padding:6px 12px;border-radius:20px;">🌭 2 pølser</span>
+      <span style="background:#fff3e0;color:#e65100;font-size:13px;font-weight:700;padding:6px 12px;border-radius:20px;">🍦 1 is</span>
+      <span style="background:#fff3e0;color:#e65100;font-size:13px;font-weight:700;padding:6px 12px;border-radius:20px;">🍿 Popcorn</span>
+      <span style="background:#fff3e0;color:#e65100;font-size:13px;font-weight:700;padding:6px 12px;border-radius:20px;">🥤 Brus</span>
+    </div>
+    <div class="notice" style="margin-top:12px;">
+      <span style="font-size:20px;">⚠️</span>
+      <div class="notice-text">For å planlegge mat til alle barna — <span style="color:#c62828;">registrer antall barn du tar med</span> i skjemaet nedenfor!</div>
+    </div>
+  </div>
+
+  <!-- REGISTRATION FORM -->
+  <div class="card">
+    <div class="card-title">👨‍👩‍👧 Registrer antall barn</div>
+    <div class="reg-form" id="regForm">
+      <div>
+        <div style="font-size:12px;font-weight:900;color:#888;margin-bottom:5px;">DITT NAVN</div>
+        <input type="text" id="parentName" placeholder="Fornavn og etternavn..." maxlength="40">
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:900;color:#888;margin-bottom:8px;">ANTALL BARN DU TAR MED</div>
+        <div class="num-row">
+          <div class="num-lbl">Antall barn</div>
+          <button class="sc-btn" onclick="adjKids(-1)">−</button>
+          <span class="sc-num" id="kidCount">1</span>
+          <button class="sc-btn" onclick="adjKids(1)">+</button>
+        </div>
+      </div>
+      <button class="submit-btn" onclick="submitReg()">REGISTRER ⚽</button>
+    </div>
+
+    <div class="success-reg" id="successReg">
+      <div style="font-size:36px;margin-bottom:6px;">🎉</div>
+      <div class="big" id="regSuccessName">REGISTRERT!</div>
+      <div class="sub" id="regSuccessSub">Takk! Vi gleder oss til å se deg!</div>
+      <button class="new-btn" onclick="resetReg()">✏️ Endre registrering</button>
+    </div>
+
+    <!-- Live list of registered -->
+    <div class="reg-list-wrap" id="regListWrap">
+      <div class="reg-list-title">PÅMELDTE SÅ LANGT</div>
+      <div id="regList"></div>
+      <div class="total-row">
+        <div class="total-lbl">🧒 Totalt antall barn</div>
+        <div class="total-num" id="totalKids">0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="card">
+    <div class="card-title">🔗 Sider</div>
+    <div class="nav-grid">
+      <a class="nav-a primary" href="index.html">📋 Program</a>
+      <a class="nav-a" href="map.html">🗺 Festivalkart</a>
+      <a class="nav-a" href="quiz.html">⚽ VM-Tipping</a>
+      <a class="nav-a" href="#regForm" onclick="document.getElementById('parentName').focus()">👨‍👩‍👧 Registrer barn</a>
+    </div>
+  </div>
+
+  <div style="text-align:center;color:#aaa;font-size:11px;padding-bottom:8px;">VM 2026 · Familie- og vennekveld · Alle aldre velkomne</div>
+
+</div>
+
+<script>
+let kidCount = 1;
+
+function adjKids(d) {
+  kidCount = Math.max(1, Math.min(10, kidCount + d));
+  document.getElementById('kidCount').textContent = kidCount;
+}
+
+function getRegs() { return JSON.parse(localStorage.getItem('vmregs') || '[]'); }
+function saveRegs(r) { localStorage.setItem('vmregs', JSON.stringify(r)); }
+
+function submitReg() {
+  const name = document.getElementById('parentName').value.trim();
+  if (!name) { alert('Skriv inn navnet ditt først! 😊'); return; }
+  const regs = getRegs();
+  const idx = regs.findIndex(r => r.name.toLowerCase() === name.toLowerCase());
+  const entry = { name, kids: kidCount, ts: Date.now() };
+  if (idx >= 0) regs[idx] = entry; else regs.push(entry);
+  saveRegs(regs);
+  document.getElementById('regForm').style.display = 'none';
+  document.getElementById('successReg').style.display = 'block';
+  document.getElementById('regSuccessName').textContent = name.toUpperCase() + ' ER REGISTRERT!';
+  const kWord = kidCount === 1 ? 'barn' : 'barn';
+  document.getElementById('regSuccessSub').textContent = kidCount + ' ' + kWord + ' · Takk! Vi gleder oss! 🎉';
+  renderRegList();
+}
+
+function resetReg() {
+  document.getElementById('regForm').style.display = 'flex';
+  document.getElementById('successReg').style.display = 'none';
+}
+
+function renderRegList() {
+  const regs = getRegs();
+  const wrap = document.getElementById('regListWrap');
+  if (!regs.length) { wrap.style.display = 'none'; return; }
+  wrap.style.display = 'block';
+  const total = regs.reduce((s, r) => s + r.kids, 0);
+  document.getElementById('totalKids').textContent = total;
+  document.getElementById('regList').innerHTML = regs
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map(r => `<div class="reg-row">
+      <div class="reg-name">${r.name}</div>
+      <div class="reg-count">${r.kids}</div>
+      <div class="reg-badge">${r.kids === 1 ? 'barn' : 'barn'}</div>
+    </div>`).join('');
+}
+
+renderRegList();
+</script>
+</body>
+</html>
