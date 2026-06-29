@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Norge mot Elfenbenskysten – VM-kamp</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#001a54;font-family:'Nunito',sans-serif;}
+.poster{background:linear-gradient(160deg,#003087 0%,#001a54 60%,#00205b 100%);min-height:100vh;padding:20px;position:relative;overflow:hidden;max-width:480px;margin:0 auto;}
+.header{text-align:center;padding:16px 0 8px;position:relative;z-index:2;}
+.header-flag-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:6px;}
+.flag-pill{background:rgba(255,255,255,0.12);border-radius:20px;padding:6px 14px;font-size:22px;}
+.vs-badge{background:#EF3340;color:white;font-family:'Anton',sans-serif;font-size:20px;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;}
+.title-main{font-family:'Anton',sans-serif;font-size:32px;color:#FFD700;letter-spacing:2px;line-height:1.1;text-shadow:0 2px 8px rgba(0,0,0,0.4);}
+.title-sub{color:rgba(255,255,255,0.85);font-size:14px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-top:4px;}
+.players-row{display:flex;justify-content:space-between;align-items:flex-end;margin:12px 0 0;position:relative;z-index:2;gap:8px;}
+.player-card{flex:1;text-align:center;max-width:160px;}
+.player-svg-wrap{margin:0 auto;width:140px;height:200px;}
+.player-name{color:#FFD700;font-family:'Anton',sans-serif;font-size:16px;letter-spacing:1px;margin-top:4px;}
+.player-nation{color:rgba(255,255,255,0.7);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+.program-box{background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,215,0,0.4);border-radius:16px;padding:16px 18px;margin:14px 0 0;position:relative;z-index:2;}
+.program-title{color:#FFD700;font-family:'Anton',sans-serif;font-size:18px;letter-spacing:2px;text-align:center;margin-bottom:12px;}
+.prog-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:0.5px solid rgba(255,255,255,0.1);}
+.prog-item:last-child{border-bottom:none;}
+.prog-time{color:#FFD700;font-weight:900;font-size:14px;min-width:52px;padding-top:1px;}
+.prog-icon{font-size:18px;min-width:24px;text-align:center;}
+.prog-text{color:rgba(255,255,255,0.92);font-size:13px;font-weight:700;line-height:1.4;flex:1;}
+.prog-sub{color:rgba(255,255,255,0.6);font-size:11px;font-weight:400;font-style:italic;margin-top:1px;}
+.highlight-row{background:rgba(255,215,0,0.12);border-radius:8px;padding:8px 10px;margin:-2px -4px;}
+.food-box{background:rgba(255,107,0,0.12);border:1px solid rgba(255,107,0,0.4);border-radius:10px;margin-top:6px;padding:8px 10px;}
+.food-section-title{color:#FF9940;font-family:'Anton',sans-serif;font-size:10px;letter-spacing:1.5px;margin-bottom:5px;}
+.food-pill-kids{background:rgba(255,215,0,0.15);border:1px solid rgba(255,215,0,0.4);border-radius:20px;padding:3px 9px;font-size:11px;color:#FFD700;font-weight:700;white-space:nowrap;}
+.food-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px;}
+.bbq-note{font-size:10px;color:rgba(255,255,255,0.5);font-style:italic;margin-top:4px;}
+.map-link{display:block;text-align:center;margin-top:14px;position:relative;z-index:2;}
+.map-btn{display:inline-block;background:rgba(255,215,0,0.15);border:1.5px solid #FFD700;color:#FFD700;font-family:'Anton',sans-serif;font-size:14px;letter-spacing:2px;padding:10px 24px;border-radius:30px;text-decoration:none;}
+.haaland-anim{animation:float1 3s ease-in-out infinite;}
+.diallo-anim{animation:float2 3.4s ease-in-out infinite;}
+@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes float2{0%,100%{transform:translateY(-4px)}50%{transform:translateY(4px)}}
+.ball-spin{display:inline-block;animation:spin 3s linear infinite;}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="header">
+    <div class="header-flag-row">
+      <div class="flag-pill">🇳🇴</div>
+      <div class="vs-badge">VS</div>
+      <div class="flag-pill">🇨🇮</div>
+    </div>
+    <div class="title-main">NORGE MOT<br>ELFENBENSKYSTEN</div>
+    <div class="title-sub">VM-KAMP</div>
+  </div>
+
+  <div class="players-row">
+    <div class="player-card">
+      <div class="player-svg-wrap haaland-anim">
+        <svg viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="70" cy="190" rx="38" ry="6" fill="rgba(0,0,0,0.3)"/>
+          <rect x="40" y="145" width="60" height="50" rx="8" fill="#EF3340"/>
+          <rect x="52" y="145" width="36" height="18" rx="3" fill="white" opacity="0.15"/>
+          <text x="70" y="168" text-anchor="middle" font-size="14" font-weight="900" fill="white" font-family="Anton,sans-serif">9</text>
+          <rect x="20" y="148" width="22" height="38" rx="4" fill="#EF3340"/>
+          <rect x="98" y="148" width="22" height="38" rx="4" fill="#EF3340"/>
+          <rect x="50" y="190" width="16" height="10" rx="3" fill="#1a1a2e"/>
+          <rect x="74" y="190" width="16" height="10" rx="3" fill="#1a1a2e"/>
+          <rect x="48" y="193" width="20" height="6" rx="2" fill="white" opacity="0.7"/>
+          <rect x="72" y="193" width="20" height="6" rx="2" fill="white" opacity="0.7"/>
+          <ellipse cx="70" cy="68" rx="24" ry="26" fill="#F5CBA7"/>
+          <ellipse cx="70" cy="62" rx="24" ry="20" fill="#F5DEB3"/>
+          <path d="M48,62 Q50,38 70,38 Q90,38 92,62 Q85,48 70,48 Q55,48 48,62Z" fill="#D4A355"/>
+          <ellipse cx="62" cy="68" rx="3.5" ry="2.5" fill="#5D4037"/>
+          <ellipse cx="78" cy="68" rx="3.5" ry="2.5" fill="#5D4037"/>
+          <ellipse cx="62.5" cy="68" rx="2" ry="1.5" fill="#1a0a00"/>
+          <ellipse cx="78.5" cy="68" rx="2" ry="1.5" fill="#1a0a00"/>
+          <path d="M64,76 Q70,80 76,76" fill="none" stroke="#C07060" stroke-width="1.5" stroke-linecap="round"/>
+          <rect x="55" y="90" width="30" height="10" rx="4" fill="#EAEAEA"/>
+          <circle cx="38" cy="170" r="8" fill="#EF3340" stroke="white" stroke-width="1.5"/>
+          <path d="M35,167 L38,172 L42,165" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="player-name">HAALAND</div>
+      <div class="player-nation">🇳🇴 Norge</div>
+    </div>
+
+    <div style="flex:0 0 auto;text-align:center;z-index:3;">
+      <div style="background:rgba(255,255,255,0.1);border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;margin:0 auto 4px;">
+        <span class="ball-spin" style="font-size:32px;">⚽</span>
+      </div>
+      <div style="color:rgba(255,255,255,0.7);font-size:10px;font-weight:700;letter-spacing:1px;">Tirsdag 30.06.2026</div>
+    </div>
+
+    <div class="player-card">
+      <div class="player-svg-wrap diallo-anim">
+        <svg viewBox="0 0 140 200" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="70" cy="190" rx="38" ry="6" fill="rgba(0,0,0,0.3)"/>
+          <rect x="40" y="145" width="60" height="50" rx="8" fill="#FF6B00"/>
+          <rect x="52" y="145" width="36" height="18" rx="3" fill="rgba(0,80,0,0.3)"/>
+          <text x="70" y="168" text-anchor="middle" font-size="14" font-weight="900" fill="white" font-family="Anton,sans-serif">16</text>
+          <rect x="20" y="148" width="22" height="38" rx="4" fill="#FF6B00"/>
+          <rect x="98" y="148" width="22" height="38" rx="4" fill="#FF6B00"/>
+          <rect x="50" y="190" width="16" height="10" rx="3" fill="#1a1a2e"/>
+          <rect x="74" y="190" width="16" height="10" rx="3" fill="#1a1a2e"/>
+          <rect x="48" y="193" width="20" height="6" rx="2" fill="white" opacity="0.7"/>
+          <rect x="72" y="193" width="20" height="6" rx="2" fill="white" opacity="0.7"/>
+          <ellipse cx="70" cy="68" rx="24" ry="26" fill="#8B5A2B"/>
+          <ellipse cx="70" cy="62" rx="24" ry="20" fill="#6B3A1F"/>
+          <path d="M48,65 Q50,40 70,40 Q90,40 92,65 Q85,50 70,50 Q55,50 48,65Z" fill="#1a0a00"/>
+          <ellipse cx="62" cy="68" rx="3.5" ry="2.5" fill="#3E2723"/>
+          <ellipse cx="78" cy="68" rx="3.5" ry="2.5" fill="#3E2723"/>
+          <ellipse cx="62.5" cy="68" rx="2" ry="1.5" fill="#1a0a00"/>
+          <ellipse cx="78.5" cy="68" rx="2" ry="1.5" fill="#1a0a00"/>
+          <path d="M64,76 Q70,81 76,76" fill="none" stroke="#C07060" stroke-width="1.5" stroke-linecap="round"/>
+          <rect x="55" y="90" width="30" height="10" rx="4" fill="#EAEAEA"/>
+          <circle cx="102" cy="170" r="8" fill="#FF6B00" stroke="white" stroke-width="1.5"/>
+          <path d="M99,167 L102,172 L106,165" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="player-name">A. DIALLO</div>
+      <div class="player-nation">🇨🇮 Elfenbenskysten</div>
+    </div>
+  </div>
+
+  <div class="program-box">
+    <div class="program-title">⚽ KVELDSPROGRAM ⚽</div>
+
+    <div class="prog-item">
+      <div class="prog-time">17:00</div>
+      <div class="prog-icon">🎉</div>
+      <div class="prog-text">Dørene åpner – Lek &amp; DJ
+        <div class="prog-sub">DJuRo, hopping og straffespark</div>
+      </div>
+    </div>
+
+    <div class="prog-item">
+      <div class="prog-time">18:00</div>
+      <div class="prog-icon">🍽️</div>
+      <div class="prog-text">Maten serveres
+        <div class="food-box">
+          <div class="food-section-title">🧒 BARNEPAKKE (inkludert)</div>
+          <div class="food-row">
+            <span class="food-pill-kids">🌭 2 pølser</span>
+            <span class="food-pill-kids">🍦 1 is</span>
+            <span class="food-pill-kids">🍿 Popcorn</span>
+            <span class="food-pill-kids">🥤 Brus</span>
+          </div>
+          <div class="food-section-title" style="margin-top:6px;">👨‍👩‍👧 FORELDRE — Grillen er åpen</div>
+          <div class="bbq-note">Ta med egen mat, drikke &amp; tallerken 🍖</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prog-item">
+      <div class="prog-time">18:30</div>
+      <div class="prog-icon">🎤</div>
+      <div class="prog-text">Alt for Norge – Liveopptreden
+        <div class="prog-sub">Bogstad talenter – vinner 1. klasse</div>
+      </div>
+    </div>
+
+    <div class="prog-item">
+      <div class="prog-time">18:45</div>
+      <div class="prog-icon">🚣</div>
+      <div class="prog-text">Roing</div>
+    </div>
+
+    <div class="prog-item highlight-row">
+      <div class="prog-time">19:00</div>
+      <div class="prog-icon">📺</div>
+      <div class="prog-text" style="color:#FFD700;">🟢 KAMPEN STARTER – Norge mot Elfenbenskysten</div>
+    </div>
+
+    <div class="prog-item">
+      <div class="prog-time">19:39</div>
+      <div class="prog-icon">🤩</div>
+      <div class="prog-text">HAALAND SCORER!!!
+        <div class="prog-sub">Det skjer helt garantert</div>
+      </div>
+    </div>
+
+    <div class="prog-item">
+      <div class="prog-time">20:50*</div>
+      <div class="prog-icon">🏆</div>
+      <div class="prog-text">Seiersfeiringen starter!
+        <div class="prog-sub">*Tidspunkt kan endres</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-link">
+    <a class="map-btn" href="map.html">🗺 Se festivalkart</a>
+  </div>
+
+  <div style="text-align:center;color:rgba(255,255,255,0.4);font-size:10px;margin-top:14px;position:relative;z-index:2;">
+    VM 2026 · Familie- og vennekveld · Alle aldre velkomne
+  </div>
+</div>
+</body>
+</html>
