@@ -10,8 +10,8 @@
 body{font-family:'Nunito',sans-serif;background:#f0f4f8;min-height:100vh;}
 .wrap{max-width:480px;margin:0 auto;padding:14px;display:flex;flex-direction:column;gap:12px;}
 .hdr{text-align:center;padding:12px 0 4px;}
-.hdr-title{font-family:'Anton',sans-serif;font-size:30px;color:#003087;letter-spacing:2px;}
 .hdr-flags{font-size:28px;margin-bottom:4px;}
+.hdr-title{font-family:'Anton',sans-serif;font-size:30px;color:#003087;letter-spacing:2px;}
 .hdr-sub{font-size:13px;color:#666;margin-top:3px;}
 .card{background:white;border:1px solid #e0e0e0;border-radius:14px;padding:16px;}
 .card-title{font-family:'Anton',sans-serif;font-size:14px;letter-spacing:1px;color:#111;margin-bottom:12px;}
@@ -19,15 +19,11 @@ input[type=text]{width:100%;padding:11px 14px;font-size:16px;font-family:'Nunito
 input[type=text]:focus{outline:none;border-color:#003087;}
 input[type=number]{padding:9px 12px;font-size:15px;font-family:'Nunito',sans-serif;font-weight:700;border:2px solid #ddd;border-radius:10px;background:#f8f8f8;color:#111;width:120px;}
 input[type=number]:focus{outline:none;border-color:#003087;}
-
-/* AVATARS */
 .av-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
 .av-btn{border:2.5px solid #ddd;border-radius:12px;padding:8px 4px 6px;cursor:pointer;background:#f8f8f8;display:flex;flex-direction:column;align-items:center;gap:3px;transition:border-color .15s;}
 .av-btn:hover{border-color:#aaa;}
 .av-btn.sel{border-color:#EF3340;background:#fff5f5;}
 .av-name{font-size:9px;font-weight:900;color:#555;text-align:center;line-height:1.2;}
-
-/* QUESTIONS */
 .section-div{background:#f0f4f8;border-radius:8px;padding:7px 10px;margin-bottom:14px;font-family:'Anton',sans-serif;font-size:11px;letter-spacing:1.5px;color:#666;}
 .q-block{border-bottom:1px solid #f0f0f0;padding-bottom:13px;margin-bottom:13px;}
 .q-block:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0;}
@@ -46,13 +42,11 @@ input[type=number]:focus{outline:none;border-color:#003087;}
 .sc-btn{width:36px;height:36px;border-radius:50%;border:2px solid #ddd;background:#f8f8f8;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#333;font-weight:700;}
 .sc-btn:hover{background:#eee;}
 .hint{font-size:11px;color:#999;margin-top:5px;}
-
-/* TABS */
 .tab-row{display:flex;gap:6px;}
 .tab{flex:1;padding:10px;font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1px;border:2px solid #ddd;border-radius:10px;background:#f8f8f8;color:#888;cursor:pointer;text-align:center;}
 .tab.active{background:#003087;color:#FFD700;border-color:#003087;}
-
-/* LEADERBOARD */
+.pane{display:none;flex-direction:column;gap:12px;}
+.pane.active{display:flex;}
 .lb-row{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;margin-bottom:7px;background:#f8f8f8;}
 .lb-rank{font-family:'Anton',sans-serif;font-size:18px;min-width:28px;color:#888;}
 .lb-name{font-weight:900;font-size:14px;flex:1;color:#111;}
@@ -61,37 +55,32 @@ input[type=number]:focus{outline:none;border-color:#003087;}
 .gold{background:#fffde7;border:2px solid #FFD700;}
 .silver{background:#fafafa;border:1px solid #ccc;}
 .bronze{background:#fff8f0;border:1px solid #e0a060;}
-
-/* ADMIN */
 .admin-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 0;border-bottom:1px solid #f0f0f0;}
 .admin-row:last-child{border-bottom:none;}
 .admin-lbl{font-size:12px;font-weight:900;min-width:170px;color:#333;}
-
-/* BUTTONS */
 .submit-btn{width:100%;padding:14px;font-family:'Anton',sans-serif;font-size:18px;letter-spacing:2px;background:#003087;color:#FFD700;border:none;border-radius:12px;cursor:pointer;}
 .submit-btn:hover{opacity:.9;}
+.submit-btn:disabled{opacity:.4;cursor:default;}
 .new-btn{width:100%;padding:11px;font-family:'Anton',sans-serif;font-size:15px;letter-spacing:2px;background:white;color:#003087;border:2.5px solid #003087;border-radius:12px;cursor:pointer;margin-top:10px;}
-
 .success{background:#e8f5e9;border:2px solid #a5d6a7;border-radius:14px;padding:20px;text-align:center;display:none;}
 .success .big{font-family:'Anton',sans-serif;font-size:26px;color:#1b5e20;letter-spacing:1px;}
 .success .sub{font-size:13px;color:#2e7d32;margin-top:6px;font-weight:700;}
-
-.pane{display:none;flex-direction:column;gap:12px;}
-.pane.active{display:flex;}
-
-.nav-link{text-align:center;margin-top:4px;}
-.nav-a{display:inline-block;background:#f0f4f8;border:1.5px solid #003087;color:#003087;font-family:'Anton',sans-serif;font-size:13px;letter-spacing:1px;padding:8px 20px;border-radius:30px;text-decoration:none;}
-
-  .lock-banner{background:#fce4ec;border:2px solid #e53935;border-radius:12px;padding:14px 16px;text-align:center;display:none;}
-  .lock-banner .big{font-family:'Anton',sans-serif;font-size:18px;color:#c62828;letter-spacing:1px;}
-  .lock-banner .sub{font-size:13px;color:#c62828;margin-top:4px;font-weight:700;}
-  .countdown-box{background:#e8f5e9;border:1.5px solid #a5d6a7;border-radius:10px;padding:10px 14px;text-align:center;}
-  .countdown-lbl{font-size:11px;font-weight:900;color:#555;letter-spacing:1px;margin-bottom:3px;}
-  .countdown-num{font-family:'Anton',sans-serif;font-size:22px;color:#1b5e20;letter-spacing:1px;}
-  .lock-btn{width:100%;padding:11px;font-family:'Anton',sans-serif;font-size:14px;letter-spacing:1.5px;background:#fce4ec;color:#c62828;border:2px solid #e53935;border-radius:12px;cursor:pointer;margin-top:4px;}
-  .lock-btn:hover{background:#ffcdd2;}
-  .unlock-btn{width:100%;padding:11px;font-family:'Anton',sans-serif;font-size:14px;letter-spacing:1.5px;background:#e8f5e9;color:#2e7d32;border:2px solid #43a047;border-radius:12px;cursor:pointer;margin-top:4px;}
-  .unlock-btn:hover{background:#c8e6c9;}
+.lock-banner{background:#fce4ec;border:2px solid #e53935;border-radius:12px;padding:14px 16px;text-align:center;display:none;}
+.lock-banner .big{font-family:'Anton',sans-serif;font-size:18px;color:#c62828;letter-spacing:1px;}
+.lock-banner .sub{font-size:13px;color:#c62828;margin-top:4px;font-weight:700;}
+.countdown-box{background:#e8f5e9;border:1.5px solid #a5d6a7;border-radius:10px;padding:10px 14px;text-align:center;}
+.countdown-lbl{font-size:11px;font-weight:900;color:#555;letter-spacing:1px;margin-bottom:3px;}
+.countdown-num{font-family:'Anton',sans-serif;font-size:22px;color:#1b5e20;letter-spacing:1px;}
+.lock-btn{width:100%;padding:11px;font-family:'Anton',sans-serif;font-size:14px;letter-spacing:1.5px;background:#fce4ec;color:#c62828;border:2px solid #e53935;border-radius:12px;cursor:pointer;margin-top:4px;}
+.lock-btn:hover{background:#ffcdd2;}
+.unlock-btn{width:100%;padding:11px;font-family:'Anton',sans-serif;font-size:14px;letter-spacing:1.5px;background:#e8f5e9;color:#2e7d32;border:2px solid #43a047;border-radius:12px;cursor:pointer;margin-top:4px;display:none;}
+.unlock-btn:hover{background:#c8e6c9;}
+.firebase-status{font-size:11px;text-align:center;padding:4px;color:#999;}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid #ddd;border-top-color:#003087;border-radius:50%;animation:spin .8s linear infinite;vertical-align:middle;margin-right:4px;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.nav-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.nav-a{display:block;background:white;border:2px solid #003087;color:#003087;font-family:'Anton',sans-serif;font-size:11px;letter-spacing:1px;padding:10px;border-radius:12px;text-decoration:none;text-align:center;}
+.nav-a:hover{background:#f0f4f8;}
 </style>
 </head>
 <body>
@@ -102,17 +91,17 @@ input[type=number]:focus{outline:none;border-color:#003087;}
     <div class="hdr-sub">Norge mot Elfenbenskysten · Tirsdag 30.06.2026</div>
   </div>
 
-
-  <!-- COUNTDOWN + LOCK BANNER -->
+  <!-- COUNTDOWN + LOCK -->
   <div class="countdown-box" id="countdownBox">
     <div class="countdown-lbl">⏰ FRISTEN ER KL. 19:00 · 30. JUNI 2026</div>
     <div class="countdown-num" id="countdownNum">Laster...</div>
   </div>
-
   <div class="lock-banner" id="lockBanner">
     <div class="big">🔒 TIPPING STENGT</div>
-    <div class="sub" id="lockReason">Fristen er passert — ingen flere svar mottas.</div>
+    <div class="sub" id="lockReason">Fristen er passert.</div>
   </div>
+
+  <div class="firebase-status" id="fbStatus"><span class="spinner"></span>Kobler til...</div>
 
   <div class="tab-row">
     <div class="tab active" id="tab-tipp" onclick="showTab('tipp')">✏️ TIPP</div>
@@ -129,136 +118,39 @@ input[type=number]:focus{outline:none;border-color:#003087;}
 
     <div class="card">
       <div class="card-title">🧡 Velg din norske spiller!</div>
-      <div class="av-grid" id="avatarGrid">
-
+      <div class="av-grid">
         <button class="av-btn" data-av="haaland" data-emoji="⚽" onclick="selAv(this)">
-          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/>
-            <text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">9</text>
-            <rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5DEB3"/>
-            <path d="M16,24 Q17,12 28,11 Q39,12 40,24 Q36,16 28,16 Q20,16 16,24Z" fill="#D4A355"/>
-            <ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/>
-            <path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/><text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">9</text><rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/><rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/><ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5DEB3"/><path d="M16,24 Q17,12 28,11 Q39,12 40,24 Q36,16 28,16 Q20,16 16,24Z" fill="#D4A355"/><ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/></svg>
           <div class="av-name">Haaland #9</div>
         </button>
-
         <button class="av-btn" data-av="odegaard" data-emoji="🎯" onclick="selAv(this)">
-          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/>
-            <text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">8</text>
-            <rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5CBA7"/>
-            <path d="M16,26 Q16,11 28,10 Q40,11 40,26 Q37,17 28,17 Q19,17 16,26Z" fill="#8B6A34"/>
-            <ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/>
-            <path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/><text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">8</text><rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/><rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/><ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5CBA7"/><path d="M16,26 Q16,11 28,10 Q40,11 40,26 Q37,17 28,17 Q19,17 16,26Z" fill="#8B6A34"/><ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/></svg>
           <div class="av-name">Ødegaard #8</div>
         </button>
-
         <button class="av-btn" data-av="nusa" data-emoji="⚡" onclick="selAv(this)">
-          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/>
-            <text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">11</text>
-            <rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <ellipse cx="28" cy="24" rx="13" ry="15" fill="#8B5A2B"/>
-            <path d="M16,27 Q15,11 28,10 Q41,11 40,27 Q37,17 28,17 Q19,17 16,27Z" fill="#1a0a00"/>
-            <ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#3E2723"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#3E2723"/>
-            <path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/><text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">11</text><rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/><rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/><ellipse cx="28" cy="24" rx="13" ry="15" fill="#8B5A2B"/><path d="M16,27 Q15,11 28,10 Q41,11 40,27 Q37,17 28,17 Q19,17 16,27Z" fill="#1a0a00"/><ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#3E2723"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#3E2723"/><path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/></svg>
           <div class="av-name">Nusa #11</div>
         </button>
-
         <button class="av-btn" data-av="ajer" data-emoji="🛡️" onclick="selAv(this)">
-          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/>
-            <text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">6</text>
-            <rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5DEB3"/>
-            <path d="M16,26 Q15,11 28,10 Q41,11 40,26 Q37,18 28,18 Q19,18 16,26Z" fill="#C8943A"/>
-            <ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/>
-            <path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/><text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">6</text><rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/><rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/><ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5DEB3"/><path d="M16,26 Q15,11 28,10 Q41,11 40,26 Q37,18 28,18 Q19,18 16,26Z" fill="#C8943A"/><ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/></svg>
           <div class="av-name">Ajer #6</div>
         </button>
-
         <button class="av-btn" data-av="bobb" data-emoji="🔥" onclick="selAv(this)">
-          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/>
-            <text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">22</text>
-            <rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <ellipse cx="28" cy="24" rx="13" ry="15" fill="#6B3A1F"/>
-            <path d="M16,27 Q15,11 28,10 Q41,11 40,27 Q37,17 28,17 Q19,17 16,27Z" fill="#1a0a00"/>
-            <ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#3E2723"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#3E2723"/>
-            <path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/><text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">22</text><rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/><rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/><ellipse cx="28" cy="24" rx="13" ry="15" fill="#6B3A1F"/><path d="M16,27 Q15,11 28,10 Q41,11 40,27 Q37,17 28,17 Q19,17 16,27Z" fill="#1a0a00"/><ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#3E2723"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#3E2723"/><path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/></svg>
           <div class="av-name">Bobb #22</div>
         </button>
-
         <button class="av-btn" data-av="berge" data-emoji="💪" onclick="selAv(this)">
-          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/>
-            <text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">23</text>
-            <rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5DEB3"/>
-            <path d="M16,26 Q15,11 28,10 Q41,11 40,26 Q37,17 28,17 Q19,17 16,26Z" fill="#333"/>
-            <ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/>
-            <path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/><text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">23</text><rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/><rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/><ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5DEB3"/><path d="M16,26 Q15,11 28,10 Q41,11 40,26 Q37,17 28,17 Q19,17 16,26Z" fill="#333"/><ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/></svg>
           <div class="av-name">Berge #23</div>
         </button>
-
         <button class="av-btn" data-av="nyland" data-emoji="🧤" onclick="selAv(this)">
-          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="42" width="36" height="34" rx="5" fill="#FFD700"/>
-            <text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="#003087" font-family="Anton,sans-serif">1</text>
-            <rect x="2" y="45" width="9" height="24" rx="3" fill="#FFD700"/>
-            <rect x="45" y="45" width="9" height="24" rx="3" fill="#FFD700"/>
-            <rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5DEB3"/>
-            <path d="M16,26 Q15,11 28,10 Q41,11 40,26 Q37,17 28,17 Q19,17 16,26Z" fill="#555"/>
-            <ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/>
-            <path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="42" width="36" height="34" rx="5" fill="#FFD700"/><text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="#003087" font-family="Anton,sans-serif">1</text><rect x="2" y="45" width="9" height="24" rx="3" fill="#FFD700"/><rect x="45" y="45" width="9" height="24" rx="3" fill="#FFD700"/><rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/><rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/><ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5DEB3"/><path d="M16,26 Q15,11 28,10 Q41,11 40,26 Q37,17 28,17 Q19,17 16,26Z" fill="#555"/><ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/></svg>
           <div class="av-name">Nyland 🧤 #1</div>
         </button>
-
         <button class="av-btn" data-av="sorloth" data-emoji="🦅" onclick="selAv(this)">
-          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/>
-            <text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">20</text>
-            <rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/>
-            <rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/>
-            <ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5CBA7"/>
-            <path d="M16,26 Q16,11 28,10 Q40,11 40,26 Q37,17 28,17 Q19,17 16,26Z" fill="#8B6A34"/>
-            <ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/>
-            <path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg width="52" height="64" viewBox="0 0 56 80" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="42" width="36" height="34" rx="5" fill="#EF3340"/><text x="28" y="57" text-anchor="middle" font-size="10" font-weight="900" fill="white" font-family="Anton,sans-serif">20</text><rect x="2" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="45" y="45" width="9" height="24" rx="3" fill="#EF3340"/><rect x="16" y="74" width="9" height="5" rx="2" fill="#222"/><rect x="31" y="74" width="9" height="5" rx="2" fill="#222"/><ellipse cx="28" cy="24" rx="13" ry="15" fill="#F5CBA7"/><path d="M16,26 Q16,11 28,10 Q40,11 40,26 Q37,17 28,17 Q19,17 16,26Z" fill="#8B6A34"/><ellipse cx="23" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><ellipse cx="33" cy="25" rx="2.2" ry="1.8" fill="#5D4037"/><path d="M24,31 Q28,34 32,31" fill="none" stroke="#C07060" stroke-width="1.2" stroke-linecap="round"/></svg>
           <div class="av-name">Sørloth #20</div>
         </button>
-
       </div>
     </div>
 
@@ -266,7 +158,6 @@ input[type=number]:focus{outline:none;border-color:#003087;}
       <div class="card-title">🧠 Tippeskjema</div>
 
       <div class="section-div">🟢 ENKLE SPØRSMÅL — 1 poeng</div>
-
       <div class="q-block">
         <div class="q-lbl">🏆 Hvem vinner? <span class="pts p1">1 poeng</span></div>
         <div class="opts" id="q1">
@@ -275,7 +166,6 @@ input[type=number]:focus{outline:none;border-color:#003087;}
         </div>
         <div class="hint">Uavgjort = straffespark. Tipp hvem som vinner til slutt!</div>
       </div>
-
       <div class="q-block">
         <div class="q-lbl">⚽ Scorer Haaland? <span class="pts p1">1 poeng</span></div>
         <div class="opts" id="q2">
@@ -285,45 +175,25 @@ input[type=number]:focus{outline:none;border-color:#003087;}
       </div>
 
       <div class="section-div">🟡 MIDDELS — 2 poeng</div>
-
       <div class="q-block">
         <div class="q-lbl">⚡ Mål i første omgang? <span class="pts p2">2 poeng</span></div>
-        <div class="sc-row">
-          <button class="sc-btn" onclick="adjSc('q4',-1)">−</button>
-          <span class="sc-num" id="q4-val">0</span>
-          <button class="sc-btn" onclick="adjSc('q4',1)">+</button>
-          <span style="font-size:13px;color:#888;">mål totalt</span>
-        </div>
+        <div class="sc-row"><button class="sc-btn" onclick="adjSc('q4',-1)">−</button><span class="sc-num" id="q4-val">0</span><button class="sc-btn" onclick="adjSc('q4',1)">+</button><span style="font-size:13px;color:#888;">mål totalt</span></div>
       </div>
-
       <div class="q-block">
         <div class="q-lbl">🟨 Antall gule kort? <span class="pts p2">2 poeng</span></div>
-        <div class="sc-row">
-          <button class="sc-btn" onclick="adjSc('q5',-1)">−</button>
-          <span class="sc-num" id="q5-val">0</span>
-          <button class="sc-btn" onclick="adjSc('q5',1)">+</button>
-          <span style="font-size:13px;color:#888;">kort</span>
-        </div>
+        <div class="sc-row"><button class="sc-btn" onclick="adjSc('q5',-1)">−</button><span class="sc-num" id="q5-val">0</span><button class="sc-btn" onclick="adjSc('q5',1)">+</button><span style="font-size:13px;color:#888;">kort</span></div>
       </div>
 
       <div class="section-div">🔴 VANSKELIG — 3 poeng</div>
-
       <div class="q-block">
         <div class="q-lbl">🚣 Ganger vi ser norske supportere ro på TV? <span class="pts p3">3 poeng</span></div>
-        <div class="sc-row">
-          <button class="sc-btn" onclick="adjSc('q6',-1)">−</button>
-          <span class="sc-num" id="q6-val">0</span>
-          <button class="sc-btn" onclick="adjSc('q6',1)">+</button>
-          <span style="font-size:13px;color:#888;">ganger</span>
-        </div>
+        <div class="sc-row"><button class="sc-btn" onclick="adjSc('q6',-1)">−</button><span class="sc-num" id="q6-val">0</span><button class="sc-btn" onclick="adjSc('q6',1)">+</button><span style="font-size:13px;color:#888;">ganger</span></div>
       </div>
-
       <div class="q-block">
         <div class="q-lbl">⏱️ Minutt for Norges første mål? <span class="pts p3">3 poeng</span></div>
         <input type="number" id="q7" min="1" max="120" placeholder="F.eks. 39" style="margin-top:6px;">
         <div class="hint">La stå tomt hvis du tror det ikke blir mål.</div>
       </div>
-
       <div class="q-block">
         <div class="q-lbl">🔴 Rødt kort i kampen? <span class="pts p3">3 poeng</span></div>
         <div class="opts" id="q8">
@@ -333,90 +203,44 @@ input[type=number]:focus{outline:none;border-color:#003087;}
           <button class="opt" onclick="selOpt('q8',this,'Begge')">😱 Begge</button>
         </div>
       </div>
-
       <div class="q-block">
-        <div class="q-lbl">🎯 Antall frispark i kampen (begge lag)? <span class="pts p3">3 poeng</span></div>
-        <div class="sc-row">
-          <button class="sc-btn" onclick="adjSc('q10',-1)">−</button>
-          <span class="sc-num" id="q10-val">0</span>
-          <button class="sc-btn" onclick="adjSc('q10',1)">+</button>
-          <span style="font-size:13px;color:#888;">frispark</span>
-        </div>
+        <div class="q-lbl">🎯 Antall frispark (begge lag)? <span class="pts p3">3 poeng</span></div>
+        <div class="sc-row"><button class="sc-btn" onclick="adjSc('q10',-1)">−</button><span class="sc-num" id="q10-val">0</span><button class="sc-btn" onclick="adjSc('q10',1)">+</button><span style="font-size:13px;color:#888;">frispark</span></div>
         <div class="hint">Hint: vanligvis mellom 15 og 30</div>
       </div>
-
       <div class="q-block">
         <div class="q-lbl">📏 Antall langpasninger (Norge)? <span class="pts p3">3 poeng</span></div>
-        <div class="sc-row">
-          <button class="sc-btn" onclick="adjSc('q11',-1)">−</button>
-          <span class="sc-num" id="q11-val">0</span>
-          <button class="sc-btn" onclick="adjSc('q11',1)">+</button>
-          <span style="font-size:13px;color:#888;">langpasninger</span>
-        </div>
+        <div class="sc-row"><button class="sc-btn" onclick="adjSc('q11',-1)">−</button><span class="sc-num" id="q11-val">0</span><button class="sc-btn" onclick="adjSc('q11',1)">+</button><span style="font-size:13px;color:#888;">langpasninger</span></div>
         <div class="hint">Hint: vanligvis mellom 30 og 70</div>
       </div>
-
       <div class="q-block">
-        <div class="q-lbl">🤾 Antall innkast i kampen (begge lag)? <span class="pts p3">3 poeng</span></div>
-        <div class="sc-row">
-          <button class="sc-btn" onclick="adjSc('q12',-1)">−</button>
-          <span class="sc-num" id="q12-val">0</span>
-          <button class="sc-btn" onclick="adjSc('q12',1)">+</button>
-          <span style="font-size:13px;color:#888;">innkast</span>
-        </div>
+        <div class="q-lbl">🤾 Antall innkast (begge lag)? <span class="pts p3">3 poeng</span></div>
+        <div class="sc-row"><button class="sc-btn" onclick="adjSc('q12',-1)">−</button><span class="sc-num" id="q12-val">0</span><button class="sc-btn" onclick="adjSc('q12',1)">+</button><span style="font-size:13px;color:#888;">innkast</span></div>
         <div class="hint">Hint: vanligvis mellom 20 og 50</div>
       </div>
-
       <div class="q-block">
         <div class="q-lbl">🥅 Antall skudd på mål (begge lag)? <span class="pts p3">3 poeng</span></div>
-        <div class="sc-row">
-          <button class="sc-btn" onclick="adjSc('q13',-1)">−</button>
-          <span class="sc-num" id="q13-val">0</span>
-          <button class="sc-btn" onclick="adjSc('q13',1)">+</button>
-          <span style="font-size:13px;color:#888;">skudd på mål</span>
-        </div>
+        <div class="sc-row"><button class="sc-btn" onclick="adjSc('q13',-1)">−</button><span class="sc-num" id="q13-val">0</span><button class="sc-btn" onclick="adjSc('q13',1)">+</button><span style="font-size:13px;color:#888;">skudd på mål</span></div>
         <div class="hint">Hint: vanligvis mellom 4 og 14</div>
       </div>
-
       <div class="q-block">
         <div class="q-lbl">🌟 Antall corners totalt? <span class="pts p3">3 poeng</span></div>
-        <div class="sc-row">
-          <button class="sc-btn" onclick="adjSc('q9',-1)">−</button>
-          <span class="sc-num" id="q9-val">0</span>
-          <button class="sc-btn" onclick="adjSc('q9',1)">+</button>
-          <span style="font-size:13px;color:#888;">corners</span>
-        </div>
+        <div class="sc-row"><button class="sc-btn" onclick="adjSc('q9',-1)">−</button><span class="sc-num" id="q9-val">0</span><button class="sc-btn" onclick="adjSc('q9',1)">+</button><span style="font-size:13px;color:#888;">corners</span></div>
         <div class="hint">Hint: vanligvis mellom 5 og 14</div>
       </div>
-      <div class="section-div">🌟 HOVEDSPØRSMÅL — 5 poeng</div>
 
+      <div class="section-div">🌟 HOVEDSPØRSMÅL — 5 poeng</div>
       <div class="q-block">
-        <div class="q-lbl">📊 Hva blir sluttresultatet? <span class="pts p5">5 poeng</span></div>
+        <div class="q-lbl">📊 Resultat ved full tid? <span class="pts p5">5 poeng</span></div>
         <div style="display:flex;gap:12px;align-items:center;margin-top:8px;flex-wrap:wrap;">
-          <div style="text-align:center;">
-            <div style="font-size:11px;color:#888;margin-bottom:5px;">🇳🇴 Norge</div>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <button class="sc-btn" onclick="adjSc('q3a',-1)">−</button>
-              <span class="sc-num" id="q3a-val">0</span>
-              <button class="sc-btn" onclick="adjSc('q3a',1)">+</button>
-            </div>
-          </div>
+          <div style="text-align:center;"><div style="font-size:11px;color:#888;margin-bottom:5px;">🇳🇴 Norge</div><div style="display:flex;align-items:center;gap:8px;"><button class="sc-btn" onclick="adjSc('q3a',-1)">−</button><span class="sc-num" id="q3a-val">0</span><button class="sc-btn" onclick="adjSc('q3a',1)">+</button></div></div>
           <div style="font-size:26px;font-weight:900;color:#888;">–</div>
-          <div style="text-align:center;">
-            <div style="font-size:11px;color:#888;margin-bottom:5px;">🇨🇮 Elfenbenskysten</div>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <button class="sc-btn" onclick="adjSc('q3b',-1)">−</button>
-              <span class="sc-num" id="q3b-val">0</span>
-              <button class="sc-btn" onclick="adjSc('q3b',1)">+</button>
-            </div>
-          </div>
+          <div style="text-align:center;"><div style="font-size:11px;color:#888;margin-bottom:5px;">🇨🇮 Elfenbenskysten</div><div style="display:flex;align-items:center;gap:8px;"><button class="sc-btn" onclick="adjSc('q3b',-1)">−</button><span class="sc-num" id="q3b-val">0</span><button class="sc-btn" onclick="adjSc('q3b',1)">+</button></div></div>
         </div>
       </div>
-
-
     </div>
 
-    <button class="submit-btn" onclick="submitEntry()">SEND INN TIPPING ⚽</button>
+    <button class="submit-btn" id="submitBtn" onclick="submitEntry()">SEND INN TIPPING ⚽</button>
 
     <div class="success" id="successBox">
       <div style="font-size:48px;margin-bottom:8px;" id="successEmoji">⚽</div>
@@ -425,8 +249,6 @@ input[type=number]:focus{outline:none;border-color:#003087;}
       <button class="new-btn" onclick="resetForm()">➕ Registrer et barn til</button>
     </div>
 
-    
-
   </div>
 
   <!-- ===== STILLING ===== -->
@@ -434,7 +256,7 @@ input[type=number]:focus{outline:none;border-color:#003087;}
 
     <div class="card">
       <div class="card-title" style="margin-bottom:4px;">🏆 POENGTAVLE</div>
-      <div style="font-size:11px;color:#999;margin-bottom:14px;" id="lb-info">Oppdateres etter hvert som du legger inn fasit</div>
+      <div style="font-size:11px;color:#999;margin-bottom:14px;" id="lb-info">Oppdateres live</div>
       <div id="lbList"></div>
       <div id="lbEmpty" style="text-align:center;padding:24px;color:#aaa;font-size:14px;">Ingen registreringer ennå 🙈</div>
     </div>
@@ -442,113 +264,102 @@ input[type=number]:focus{outline:none;border-color:#003087;}
     <div class="card">
       <div class="card-title">⚙️ Fasit (fyll inn under/etter kampen)</div>
       <div style="display:flex;flex-direction:column;">
-
-        <div class="admin-row"><span class="admin-lbl">🏆 Hvem vinner?</span>
-          <div class="opts" id="a1" style="margin:0;"><button class="opt" onclick="selOpt('a1',this,'Norge')">🇳🇴 Norge</button><button class="opt" onclick="selOpt('a1',this,'Elfenbenskysten')">🇨🇮 Elfenbenskysten</button></div></div>
-
-        <div class="admin-row"><span class="admin-lbl">⚽ Haaland scorer?</span>
-          <div class="opts" id="a2" style="margin:0;"><button class="opt" onclick="selOpt('a2',this,'Ja')">✅ Ja</button><button class="opt" onclick="selOpt('a2',this,'Nei')">❌ Nei</button></div></div>
-
-        <div class="admin-row"><span class="admin-lbl">⚡ Mål 1. omgang</span>
-          <div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a4',-1)">−</button><span class="sc-num" id="a4-val">0</span><button class="sc-btn" onclick="adjSc('a4',1)">+</button></div></div>
-
-        <div class="admin-row"><span class="admin-lbl">🟨 Gule kort</span>
-          <div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a5',-1)">−</button><span class="sc-num" id="a5-val">0</span><button class="sc-btn" onclick="adjSc('a5',1)">+</button></div></div>
-
-        <div class="admin-row"><span class="admin-lbl">🚣 Norske supportere ror</span>
-          <div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a6',-1)">−</button><span class="sc-num" id="a6-val">0</span><button class="sc-btn" onclick="adjSc('a6',1)">+</button></div></div>
-
-        <div class="admin-row"><span class="admin-lbl">⏱️ 1. mål minutt</span>
-          <input type="number" id="a7" min="1" max="120" placeholder="Minutt" style="width:80px;margin:0;"></div>
-
-        <div class="admin-row"><span class="admin-lbl">🔴 Rødt kort?</span>
-          <div class="opts" id="a8" style="margin:0;"><button class="opt" onclick="selOpt('a8',this,'Nei')">✅</button><button class="opt" onclick="selOpt('a8',this,'Norge')">🇳🇴</button><button class="opt" onclick="selOpt('a8',this,'Elfenbenskysten')">🇨🇮</button><button class="opt" onclick="selOpt('a8',this,'Begge')">😱</button></div></div>
-
-        <div class="admin-row"><span class="admin-lbl">🎯 Frispark totalt</span>
-          <div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a10',-1)">−</button><span class="sc-num" id="a10-val">0</span><button class="sc-btn" onclick="adjSc('a10',1)">+</button></div></div>
-
-        <div class="admin-row"><span class="admin-lbl">📏 Langpasninger (Norge)</span>
-          <div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a11',-1)">−</button><span class="sc-num" id="a11-val">0</span><button class="sc-btn" onclick="adjSc('a11',1)">+</button></div></div>
-
-        <div class="admin-row"><span class="admin-lbl">🤾 Innkast totalt</span>
-          <div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a12',-1)">−</button><span class="sc-num" id="a12-val">0</span><button class="sc-btn" onclick="adjSc('a12',1)">+</button></div></div>
-
-        <div class="admin-row"><span class="admin-lbl">🥅 Skudd på mål</span>
-          <div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a13',-1)">−</button><span class="sc-num" id="a13-val">0</span><button class="sc-btn" onclick="adjSc('a13',1)">+</button></div></div>
-
-        <div class="admin-row"><span class="admin-lbl">📊 Sluttresultat</span>
+        <div class="admin-row"><span class="admin-lbl">🏆 Hvem vinner?</span><div class="opts" id="a1" style="margin:0;"><button class="opt" onclick="selOpt('a1',this,'Norge')">🇳🇴 Norge</button><button class="opt" onclick="selOpt('a1',this,'Elfenbenskysten')">🇨🇮 Elfenbenskysten</button></div></div>
+        <div class="admin-row"><span class="admin-lbl">⚽ Haaland scorer?</span><div class="opts" id="a2" style="margin:0;"><button class="opt" onclick="selOpt('a2',this,'Ja')">✅ Ja</button><button class="opt" onclick="selOpt('a2',this,'Nei')">❌ Nei</button></div></div>
+        <div class="admin-row"><span class="admin-lbl">⚡ Mål 1. omgang</span><div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a4',-1)">−</button><span class="sc-num" id="a4-val">0</span><button class="sc-btn" onclick="adjSc('a4',1)">+</button></div></div>
+        <div class="admin-row"><span class="admin-lbl">🟨 Gule kort</span><div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a5',-1)">−</button><span class="sc-num" id="a5-val">0</span><button class="sc-btn" onclick="adjSc('a5',1)">+</button></div></div>
+        <div class="admin-row"><span class="admin-lbl">🚣 Norske supportere ror</span><div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a6',-1)">−</button><span class="sc-num" id="a6-val">0</span><button class="sc-btn" onclick="adjSc('a6',1)">+</button></div></div>
+        <div class="admin-row"><span class="admin-lbl">⏱️ 1. mål minutt</span><input type="number" id="a7" min="1" max="120" placeholder="Minutt" style="width:100px;margin:0;"></div>
+        <div class="admin-row"><span class="admin-lbl">🔴 Rødt kort?</span><div class="opts" id="a8" style="margin:0;"><button class="opt" onclick="selOpt('a8',this,'Nei')">✅</button><button class="opt" onclick="selOpt('a8',this,'Norge')">🇳🇴</button><button class="opt" onclick="selOpt('a8',this,'Elfenbenskysten')">🇨🇮</button><button class="opt" onclick="selOpt('a8',this,'Begge')">😱</button></div></div>
+        <div class="admin-row"><span class="admin-lbl">🎯 Frispark totalt</span><div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a10',-1)">−</button><span class="sc-num" id="a10-val">0</span><button class="sc-btn" onclick="adjSc('a10',1)">+</button></div></div>
+        <div class="admin-row"><span class="admin-lbl">📏 Langpasninger (Norge)</span><div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a11',-1)">−</button><span class="sc-num" id="a11-val">0</span><button class="sc-btn" onclick="adjSc('a11',1)">+</button></div></div>
+        <div class="admin-row"><span class="admin-lbl">🤾 Innkast totalt</span><div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a12',-1)">−</button><span class="sc-num" id="a12-val">0</span><button class="sc-btn" onclick="adjSc('a12',1)">+</button></div></div>
+        <div class="admin-row"><span class="admin-lbl">🥅 Skudd på mål</span><div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a13',-1)">−</button><span class="sc-num" id="a13-val">0</span><button class="sc-btn" onclick="adjSc('a13',1)">+</button></div></div>
+        <div class="admin-row"><span class="admin-lbl">🌟 Corners totalt</span><div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a9',-1)">−</button><span class="sc-num" id="a9-val">0</span><button class="sc-btn" onclick="adjSc('a9',1)">+</button></div></div>
+        <div class="admin-row"><span class="admin-lbl">📊 Resultat ved full tid</span>
           <div style="display:flex;align-items:center;gap:6px;">
             <button class="sc-btn" onclick="adjSc('a3a',-1)">−</button><span class="sc-num" id="a3a-val">0</span>
             <span style="font-weight:900;color:#888;">–</span>
             <span class="sc-num" id="a3b-val">0</span><button class="sc-btn" onclick="adjSc('a3b',-1)">−</button>
             <button class="sc-btn" onclick="adjSc('a3b',1)">+</button><button class="sc-btn" onclick="adjSc('a3a',1)">+</button>
-          </div></div>
-
-        <div class="admin-row"><span class="admin-lbl">🌟 Corners totalt</span>
-          <div style="display:flex;align-items:center;gap:6px;"><button class="sc-btn" onclick="adjSc('a9',-1)">−</button><span class="sc-num" id="a9-val">0</span><button class="sc-btn" onclick="adjSc('a9',1)">+</button></div></div>
-
+          </div>
+        </div>
       </div>
-        <button class="lock-btn" id="manualLockBtn" onclick="manualLock()">🔒 LÅS TIPPING NÅ</button>
-        <button class="unlock-btn" id="manualUnlockBtn" onclick="manualUnlock()" style="display:none;">🔓 ÅPN TIPPING IGJEN</button>
-      <button class="submit-btn" onclick="calcScores()" style="margin-top:14px;">OPPDATER POENG 🔄</button>
+      <button class="lock-btn" id="manualLockBtn" onclick="manualLock()">🔒 LÅS TIPPING NÅ</button>
+      <button class="unlock-btn" id="manualUnlockBtn" onclick="manualUnlock()">🔓 ÅPN TIPPING IGJEN</button>
+      <button class="submit-btn" onclick="calcAndSaveScores()" style="margin-top:12px;">OPPDATER POENG 🔄</button>
     </div>
 
-    
+  </div>
 
+  <!-- NAV -->
+  <div class="nav-grid">
+    <a class="nav-a" href="index.html">📋 PROGRAM</a>
+    <a class="nav-a" href="info.html">ℹ️ PRAKTISK INFO</a>
+    <a class="nav-a" href="map.html">🗺 FESTIVALKART</a>
+    <a class="nav-a" href="info.html#regForm">👨‍👩‍👧 REGISTRER BARN</a>
   </div>
 </div>
 
-<script>
-// ── DEADLINE & LOCK LOGIC ──────────────────────────────────────────
+<!-- Firebase -->
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { getDatabase, ref, set, onValue, get } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCwnU6ZEYUTrKCc0Afru7JPjvRif-g_gbA",
+  authDomain: "norgeelfenbenkysten.firebaseapp.com",
+  databaseURL: "https://norgeelfenbenkysten-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "norgeelfenbenkysten",
+  storageBucket: "norgeelfenbenkysten.firebasestorage.app",
+  messagingSenderId: "950269622806",
+  appId: "1:950269622806:web:97e5ce88e223f783fc5337"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// Status indicator
+document.getElementById('fbStatus').innerHTML = '🟢 Koblet til Firebase';
+
+// ── DEADLINE & LOCK ──────────────────────────────────────────────────
 const DEADLINE = new Date('2026-06-30T19:00:00');
 
 function isLocked() {
-  if (localStorage.getItem('vmtipping_locked') === '1') return true;
-  return new Date() >= DEADLINE;
+  return window._manualLocked || new Date() >= DEADLINE;
 }
+
+// Listen for lock state from Firebase so all devices sync
+onValue(ref(db, 'meta/locked'), snap => {
+  window._manualLocked = snap.val() === true;
+  applyLockState();
+});
 
 function applyLockState() {
   const locked = isLocked();
-  const manualLocked = localStorage.getItem('vmtipping_locked') === '1';
   const expired = new Date() >= DEADLINE;
-  const banner = document.getElementById('lockBanner');
-  const countdownBox = document.getElementById('countdownBox');
-  const submitBtn = document.querySelector('#pane-tipp .submit-btn');
-  const manualLockBtn = document.getElementById('manualLockBtn');
-  const manualUnlockBtn = document.getElementById('manualUnlockBtn');
-
-  if (locked) {
-    banner.style.display = 'block';
-    countdownBox.style.display = 'none';
-    document.getElementById('lockReason').textContent = expired
-      ? 'Fristen kl. 19:00 er passert — ingen flere svar mottas.'
-      : '🔒 Låst manuelt av arrangør.';
-    if (submitBtn) submitBtn.disabled = true;
-    if (manualLockBtn) manualLockBtn.style.display = 'none';
-    if (manualUnlockBtn) manualUnlockBtn.style.display = (!expired) ? 'block' : 'none';
-  } else {
-    banner.style.display = 'none';
-    countdownBox.style.display = 'block';
-    if (submitBtn) submitBtn.disabled = false;
-    if (manualLockBtn) manualLockBtn.style.display = 'block';
-    if (manualUnlockBtn) manualUnlockBtn.style.display = 'none';
-  }
+  document.getElementById('lockBanner').style.display = locked ? 'block' : 'none';
+  document.getElementById('countdownBox').style.display = locked ? 'none' : 'block';
+  document.getElementById('lockReason').textContent = expired
+    ? 'Fristen kl. 19:00 er passert — ingen flere svar mottas.'
+    : '🔒 Låst manuelt av arrangør.';
+  const btn = document.getElementById('submitBtn');
+  if (btn) btn.disabled = locked;
+  document.getElementById('manualLockBtn').style.display = (!locked) ? 'block' : 'none';
+  document.getElementById('manualUnlockBtn').style.display = (locked && !expired) ? 'block' : 'none';
 }
 
-function manualLock() {
+window.manualLock = function() {
   if (!confirm('Vil du låse tippekonkurransen nå?')) return;
-  localStorage.setItem('vmtipping_locked', '1');
-  applyLockState();
-}
+  set(ref(db, 'meta/locked'), true);
+};
+window.manualUnlock = function() {
+  set(ref(db, 'meta/locked'), false);
+};
 
-function manualUnlock() {
-  localStorage.removeItem('vmtipping_locked');
-  applyLockState();
-}
-
-function updateCountdown() {
-  const now = new Date();
-  const diff = DEADLINE - now;
+// Countdown
+(function tick() {
+  const diff = DEADLINE - new Date();
   const el = document.getElementById('countdownNum');
   if (!el) return;
   if (diff <= 0) { applyLockState(); return; }
@@ -556,134 +367,156 @@ function updateCountdown() {
   const m = Math.floor((diff % 3600000) / 60000);
   const s = Math.floor((diff % 60000) / 1000);
   el.textContent = (h > 0 ? h + 't ' : '') + m + 'm ' + s + 's igjen';
-}
+  setTimeout(tick, 1000);
+})();
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
-applyLockState();
+// ── QUIZ STATE ────────────────────────────────────────────────────────
+const sc = {q3a:0,q3b:0,q4:0,q5:0,q6:0,q9:0,q10:0,q11:0,q12:0,q13:0,a3a:0,a3b:0,a4:0,a5:0,a6:0,a9:0,a10:0,a11:0,a12:0,a13:0};
+const opts = {};
+let selAvatar = null, selEmoji = '⚽';
+const avNames = {haaland:'Haaland',odegaard:'Ødegaard',nusa:'Nusa',ajer:'Ajer',bobb:'Bobb',berge:'Berge',nyland:'Nyland',sorloth:'Sørloth'};
 
-// ── ORIGINAL QUIZ LOGIC ────────────────────────────────────────────
-const sc={q3a:0,q3b:0,q4:0,q5:0,q6:0,q9:0,q10:0,q11:0,q12:0,q13:0,a3a:0,a3b:0,a4:0,a5:0,a6:0,a9:0,a10:0,a11:0,a12:0,a13:0};
-const opts={};
-let selAvatar=null,selEmoji='⚽';
-const avNames={haaland:'Haaland',odegaard:'Ødegaard',nusa:'Nusa',ajer:'Ajer',bobb:'Bobb',berge:'Berge',nyland:'Nyland',sorloth:'Sørloth'};
+window.showTab = function(t) {
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.pane').forEach(x => x.classList.remove('active'));
+  document.getElementById('tab-' + t).classList.add('active');
+  document.getElementById('pane-' + t).classList.add('active');
+};
 
-function showTab(t){
-  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
-  document.querySelectorAll('.pane').forEach(x=>x.classList.remove('active'));
-  document.getElementById('tab-'+t).classList.add('active');
-  document.getElementById('pane-'+t).classList.add('active');
-  if(t==='stilling') renderLB();
-}
-function selAv(btn){
-  document.querySelectorAll('.av-btn').forEach(b=>b.classList.remove('sel'));
+window.selAv = function(btn) {
+  document.querySelectorAll('.av-btn').forEach(b => b.classList.remove('sel'));
   btn.classList.add('sel');
-  selAvatar=btn.dataset.av;
-  selEmoji=btn.dataset.emoji;
-}
-function selOpt(qid,btn,val){
-  document.querySelectorAll('#'+qid+' .opt').forEach(b=>b.classList.remove('sel'));
+  selAvatar = btn.dataset.av;
+  selEmoji = btn.dataset.emoji;
+};
+
+window.selOpt = function(qid, btn, val) {
+  document.querySelectorAll('#' + qid + ' .opt').forEach(b => b.classList.remove('sel'));
   btn.classList.add('sel');
-  opts[qid]=val;
-}
-function adjSc(k,d){
-  sc[k]=Math.max(0,Math.min(200,(sc[k]||0)+d));
-  const el=document.getElementById(k+'-val');
-  if(el) el.textContent=sc[k];
-}
-function getEntries(){return JSON.parse(localStorage.getItem('vmtipping2')||'[]');}
-function saveEntries(e){localStorage.setItem('vmtipping2',JSON.stringify(e));}
-function submitEntry(){
-  if (isLocked()) { alert('Beklager — tippefristen er passert! Ingen flere svar mottas. 🔒'); return; }
-  const name=document.getElementById('playerName').value.trim();
-  if(!name){alert('Skriv inn navn først! 😊');return;}
-  if(!selAvatar){alert('Velg en spiller! ⚽');return;}
-  if(!opts.q1){alert('Hvem tror du vinner? 🏆');return;}
-  const entry={name,avatar:selAvatar,emoji:selEmoji,
-    q1:opts.q1||'',q2:opts.q2||'',q3:sc.q3a+'-'+sc.q3b,
-    q4:sc.q4,q5:sc.q5,q6:sc.q6,q7:document.getElementById('q7').value||'',
-    q8:opts.q8||'',q9:sc.q9,q10:sc.q10,q11:sc.q11,q12:sc.q12,q13:sc.q13,
-    pts:0,ts:Date.now()};
-  const arr=getEntries();
-  const idx=arr.findIndex(e=>e.name.toLowerCase()===name.toLowerCase());
-  if(idx>=0) arr[idx]=entry; else arr.push(entry);
-  saveEntries(arr);
-  document.getElementById('successEmoji').textContent=selEmoji;
-  document.getElementById('successName').textContent=name.toUpperCase()+' ER MED!';
-  document.getElementById('successSub').textContent=avNames[selAvatar]+' heier på deg! Lykke til 🎉';
-  document.querySelector('.submit-btn').style.display='none';
-  document.getElementById('successBox').style.display='block';
-}
-function resetForm(){
-  document.getElementById('playerName').value='';
-  document.querySelectorAll('.av-btn').forEach(b=>b.classList.remove('sel'));
-  document.querySelectorAll('.opt').forEach(b=>b.classList.remove('sel'));
-  selAvatar=null;selEmoji='⚽';
-  ['q3a','q3b','q4','q5','q6','q9','q10','q11','q12','q13'].forEach(k=>{sc[k]=0;const el=document.getElementById(k+'-val');if(el)el.textContent='0';});
-  document.getElementById('q7').value='';
-  document.getElementById('successBox').style.display='none';
-  document.querySelector('.submit-btn').style.display='block';
-}
-function calcScores(){
-  const ans={q1:opts.a1||'',q2:opts.a2||'',q3:sc.a3a+'-'+sc.a3b,
-    q4:sc.a4,q5:sc.a5,q6:sc.a6,q7:document.getElementById('a7').value||'',
-    q8:opts.a8||'',q9:sc.a9,q10:sc.a10,q11:sc.a11,q12:sc.a12,q13:sc.a13};
-  const arr=getEntries();
-  arr.forEach(e=>{
-    let p=0;
-    if(ans.q1&&e.q1===ans.q1)p+=1;
-    if(ans.q2&&e.q2===ans.q2)p+=1;
-    if(ans.q3&&e.q3===ans.q3)p+=5;
-    if(parseInt(e.q4)===parseInt(ans.q4))p+=2;
-    if(parseInt(e.q5)===parseInt(ans.q5))p+=2;
-    if(parseInt(e.q6)===parseInt(ans.q6))p+=3;
-    if(ans.q7&&e.q7&&parseInt(e.q7)===parseInt(ans.q7))p+=3;
-    if(ans.q8&&e.q8===ans.q8)p+=3;
-    if(parseInt(e.q9)===parseInt(ans.q9))p+=5;
-    if(parseInt(e.q10)===parseInt(ans.q10))p+=3;
-    if(parseInt(e.q11)===parseInt(ans.q11))p+=3;
-    if(parseInt(e.q12)===parseInt(ans.q12))p+=3;
-    if(parseInt(e.q13)===parseInt(ans.q13))p+=3;
-    e.pts=p;
+  opts[qid] = val;
+};
+
+window.adjSc = function(k, d) {
+  sc[k] = Math.max(0, Math.min(200, (sc[k] || 0) + d));
+  const el = document.getElementById(k + '-val');
+  if (el) el.textContent = sc[k];
+};
+
+// ── SUBMIT ENTRY TO FIREBASE ──────────────────────────────────────────
+window.submitEntry = function() {
+  if (isLocked()) { alert('Beklager — tippefristen er passert! 🔒'); return; }
+  const name = document.getElementById('playerName').value.trim();
+  if (!name) { alert('Skriv inn navn først! 😊'); return; }
+  if (!selAvatar) { alert('Velg en spiller! ⚽'); return; }
+  if (!opts.q1) { alert('Hvem tror du vinner? 🏆'); return; }
+
+  const key = name.toLowerCase().replace(/[^a-z0-9æøå]/g, '_');
+  const entry = {
+    name, avatar: selAvatar, emoji: selEmoji,
+    q1: opts.q1||'', q2: opts.q2||'',
+    q3: sc.q3a + '-' + sc.q3b,
+    q4: sc.q4, q5: sc.q5, q6: sc.q6,
+    q7: document.getElementById('q7').value || '',
+    q8: opts.q8||'', q9: sc.q9,
+    q10: sc.q10, q11: sc.q11, q12: sc.q12, q13: sc.q13,
+    pts: 0, ts: Date.now()
+  };
+
+  set(ref(db, 'entries/' + key), entry).then(() => {
+    document.getElementById('successEmoji').textContent = selEmoji;
+    document.getElementById('successName').textContent = name.toUpperCase() + ' ER MED!';
+    document.getElementById('successSub').textContent = avNames[selAvatar] + ' heier på deg! Lykke til 🎉';
+    document.getElementById('submitBtn').style.display = 'none';
+    document.getElementById('successBox').style.display = 'block';
+  }).catch(err => alert('Feil ved lagring: ' + err.message));
+};
+
+window.resetForm = function() {
+  document.getElementById('playerName').value = '';
+  document.querySelectorAll('.av-btn').forEach(b => b.classList.remove('sel'));
+  document.querySelectorAll('.opt').forEach(b => b.classList.remove('sel'));
+  selAvatar = null; selEmoji = '⚽';
+  ['q3a','q3b','q4','q5','q6','q9','q10','q11','q12','q13'].forEach(k => {
+    sc[k] = 0;
+    const el = document.getElementById(k + '-val');
+    if (el) el.textContent = '0';
   });
-  arr.sort((a,b)=>b.pts-a.pts);
-  saveEntries(arr);
-  renderLB();
-}
-const medals=['🥇','🥈','🥉'];
-function renderLB(){
-  const arr=getEntries().sort((a,b)=>b.pts-a.pts);
-  const list=document.getElementById('lbList');
-  const empty=document.getElementById('lbEmpty');
-  if(!arr.length){list.innerHTML='';empty.style.display='block';return;}
-  empty.style.display='none';
-  const maxPts=26;
-  list.innerHTML=arr.map((e,i)=>{
-    const cls=i===0?'gold':i===1?'silver':i===2?'bronze':'';
-    const rank=medals[i]||(i+1)+'.';
-    const bar=Math.round((e.pts/maxPts)*100);
+  document.getElementById('q7').value = '';
+  document.getElementById('successBox').style.display = 'none';
+  document.getElementById('submitBtn').style.display = 'block';
+};
+
+// ── CALC SCORES & SAVE BACK TO FIREBASE ──────────────────────────────
+window.calcAndSaveScores = function() {
+  const ans = {
+    q1: opts.a1||'', q2: opts.a2||'',
+    q3: sc.a3a + '-' + sc.a3b,
+    q4: sc.a4, q5: sc.a5, q6: sc.a6,
+    q7: document.getElementById('a7').value || '',
+    q8: opts.a8||'', q9: sc.a9,
+    q10: sc.a10, q11: sc.a11, q12: sc.a12, q13: sc.a13
+  };
+  // Save answer key to Firebase so other devices could read it
+  set(ref(db, 'meta/answers'), ans);
+
+  get(ref(db, 'entries')).then(snap => {
+    if (!snap.exists()) return;
+    const updates = {};
+    snap.forEach(child => {
+      const e = child.val();
+      let p = 0;
+      if (ans.q1 && e.q1 === ans.q1) p += 1;
+      if (ans.q2 && e.q2 === ans.q2) p += 1;
+      if (ans.q3 && e.q3 === ans.q3) p += 5;
+      if (parseInt(e.q4) === parseInt(ans.q4)) p += 2;
+      if (parseInt(e.q5) === parseInt(ans.q5)) p += 2;
+      if (parseInt(e.q6) === parseInt(ans.q6)) p += 3;
+      if (ans.q7 && e.q7 && parseInt(e.q7) === parseInt(ans.q7)) p += 3;
+      if (ans.q8 && e.q8 === ans.q8) p += 3;
+      if (parseInt(e.q9) === parseInt(ans.q9)) p += 3;
+      if (parseInt(e.q10) === parseInt(ans.q10)) p += 3;
+      if (parseInt(e.q11) === parseInt(ans.q11)) p += 3;
+      if (parseInt(e.q12) === parseInt(ans.q12)) p += 3;
+      if (parseInt(e.q13) === parseInt(ans.q13)) p += 3;
+      updates['entries/' + child.key + '/pts'] = p;
+    });
+    // Batch update all scores
+    import('https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js').then(({update}) => {
+      update(ref(db), updates).then(() => alert('Poeng oppdatert! 🎉'));
+    });
+  });
+};
+
+// ── LIVE LEADERBOARD ──────────────────────────────────────────────────
+const medals = ['🥇','🥈','🥉'];
+onValue(ref(db, 'entries'), snap => {
+  const list = document.getElementById('lbList');
+  const empty = document.getElementById('lbEmpty');
+  if (!snap.exists()) { list.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  const arr = [];
+  snap.forEach(child => arr.push(child.val()));
+  arr.sort((a, b) => b.pts - a.pts);
+  list.innerHTML = arr.map((e, i) => {
+    const cls = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
+    const rank = medals[i] || (i + 1) + '.';
+    const maxPts = 37;
+    const bar = Math.min(100, Math.round((e.pts / maxPts) * 100));
     return `<div class="lb-row ${cls}">
       <div class="lb-rank">${rank}</div>
       <div style="font-size:22px;">${e.emoji||'⚽'}</div>
       <div style="flex:1;">
         <div class="lb-name">${e.name}</div>
         <div style="background:#e0e0e0;border-radius:4px;height:5px;margin-top:4px;overflow:hidden;">
-          <div style="background:#003087;height:5px;width:${Math.min(bar,100)}%;border-radius:4px;"></div>
+          <div style="background:#003087;height:5px;width:${bar}%;border-radius:4px;transition:width .5s;"></div>
         </div>
       </div>
       <div class="lb-pts">${e.pts} pts</div>
     </div>`;
   }).join('');
-  document.getElementById('lb-info').textContent='Sist oppdatert: '+new Date().toLocaleTimeString('no-NO');
-}
-renderLB();
-</script>
+  document.getElementById('lb-info').textContent = 'Live · ' + arr.length + ' deltakere · Sist oppdatert: ' + new Date().toLocaleTimeString('no-NO');
+});
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:480px;margin:8px auto 14px;">
-    <a style="display:block;background:white;border:2px solid #003087;color:#003087;font-family:Anton,sans-serif;font-size:11px;letter-spacing:1px;padding:10px;border-radius:12px;text-decoration:none;text-align:center;" href="index.html">📋 PROGRAM</a>
-    <a style="display:block;background:white;border:2px solid #003087;color:#003087;font-family:Anton,sans-serif;font-size:11px;letter-spacing:1px;padding:10px;border-radius:12px;text-decoration:none;text-align:center;" href="info.html">ℹ️ PRAKTISK INFO</a>
-    <a style="display:block;background:white;border:2px solid #003087;color:#003087;font-family:Anton,sans-serif;font-size:11px;letter-spacing:1px;padding:10px;border-radius:12px;text-decoration:none;text-align:center;" href="map.html">🗺 FESTIVALKART</a>
-    <a style="display:block;background:white;border:2px solid #003087;color:#003087;font-family:Anton,sans-serif;font-size:11px;letter-spacing:1px;padding:10px;border-radius:12px;text-decoration:none;text-align:center;" href="info.html#regForm">👨‍👩‍👧 REGISTRER BARN</a>
-  </div>
+</script>
 </body>
 </html>
